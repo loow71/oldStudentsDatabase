@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toolbar;
 
 import com.example.myprojcet.databinding.ActivityMainBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     ActivityMainBinding binding;
@@ -29,8 +30,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         groups_tab = findViewById(R.id.groups_tab);
         students_tab = findViewById(R.id.students_tab);
 
+
         groups_tab.setOnClickListener(this);
         students_tab.setOnClickListener(this);
+
 
         select = findViewById(R.id.select);
         def = groups_tab.getTextColors();
