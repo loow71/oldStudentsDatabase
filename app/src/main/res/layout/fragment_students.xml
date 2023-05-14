@@ -7,6 +7,14 @@
     tools:context=".StudentsFragment">
 
 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+
+    </TableLayout>
+
     <FrameLayout
         android:id="@+id/frameStudentsLayout"
         android:layout_width="match_parent"
