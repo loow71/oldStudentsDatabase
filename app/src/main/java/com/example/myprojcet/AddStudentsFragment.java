@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,17 +53,8 @@ public class AddStudentsFragment extends Fragment implements View.OnClickListene
                         "You haven't entered one or more fields. Check them and try again.",
                         Toast.LENGTH_LONG).show();
             } else {
-
-                SQLiteDatabase database = dbHelper.getWritableDatabase();
-                ContentValues contentValues = new ContentValues();
-
-                contentValues.put(DBHelper.KEY_NAME, name);
-                contentValues.put(DBHelper.KEY_LAST_NAME, last_name);
-                contentValues.put(DBHelper.KEY_SURNAME, surname);
-                contentValues.put(DBHelper.KEY_DATE, date);
-                contentValues.put(DBHelper.KEY_GR, group);
-
-                database.insert(DBHelper.TABLE_STUDENTS, null, contentValues);
+                Student student = new Student(name, last_name, surname, date, group);
+                dbHelper.addStudent(student);
             }
         }
         if (flag) {
