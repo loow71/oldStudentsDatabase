@@ -6,9 +6,9 @@ public class Student {
     private String last_name;
     private String surname;
     private String date;
-    private String group;
+    private int group;
 
-    public Student(int id, String name, String last_name, String surname, String date, String group) {
+    public Student(int id, String name, String last_name, String surname, String date, int group) {
         this.id = id;
         this.name = name;
         this.last_name = last_name;
@@ -17,7 +17,7 @@ public class Student {
         this.group = group;
     }
 
-    public Student(String name, String last_name, String surname, String date, String group) {
+    public Student(String name, String last_name, String surname, String date, int group) {
         this.name = name;
         this.last_name = last_name;
         this.surname = surname;
@@ -65,11 +65,11 @@ public class Student {
         this.date = date;
     }
 
-    public String getGroup() {
+    public int getGroup() {
         return group;
     }
 
-    public void setGroup(String group) {
+    public void setGroup(int group) {
         this.group = group;
     }
 }

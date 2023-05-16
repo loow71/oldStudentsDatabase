@@ -53,7 +53,7 @@ public class AddStudentsFragment extends Fragment implements View.OnClickListene
                         "You haven't entered one or more fields. Check them and try again.",
                         Toast.LENGTH_LONG).show();
             } else {
-                Student student = new Student(name, last_name, surname, date, group);
+                Student student = new Student(name, last_name, surname, date, Integer.parseInt(group));
                 dbHelper.addStudent(student);
             }
         }

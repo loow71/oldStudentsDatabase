@@ -29,7 +29,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_STUDENTS + "(" + KEY_ID
                 + " integer primary key," + KEY_NAME + " text," + KEY_LAST_NAME
-                + " text," + KEY_SURNAME + " text," + KEY_DATE + " date," + KEY_GR + " text)");
+                + " text," + KEY_SURNAME + " text," + KEY_DATE + " date," + KEY_GR + " integer)");
     }
 
     @Override
@@ -58,7 +58,8 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = database.query(TABLE_STUDENTS, new String[] {KEY_ID, KEY_NAME, KEY_LAST_NAME, KEY_SURNAME, KEY_DATE, KEY_GR},
                 KEY_ID + "=?", new String[]{String.valueOf(id)}, null, null, null, null);
         Student student = new Student(Integer.parseInt(cursor.getString(0)), cursor.getString(1),
-                cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+                cursor.getString(2), cursor.getString(3),
+                cursor.getString(4), Integer.parseInt(cursor.getString(5)));
         return student;
     }
 
